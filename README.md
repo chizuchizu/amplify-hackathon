@@ -39,5 +39,3 @@ Your token file doesn't exist.
 - `train_400.csv`: 28x28(pixels)から20x20(pixels)に変換した後のデータ
 
 `train_400.csv`の作成は`src/resize.py`を用いました。
-
-これらのデータは既に作成し、GitHubにあるのでcloneした時点で利用可能となっています。
