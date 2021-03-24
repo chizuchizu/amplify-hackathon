@@ -21,7 +21,7 @@
 ```bash
 docker-compose up check
 ```
-```bash
+```
 # OK
 Your token file exists.
 
