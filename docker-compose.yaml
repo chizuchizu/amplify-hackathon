@@ -1,7 +1,11 @@
 version: "3"
 services:
-  amplify:
+  check:
+    command:
+      - "python"
+      - "-u"
+      - "check_token.py"
     build: .
-    tty: true
     volumes:
-      - .:/code
+      - .:/src
+      - ~/.amplify:/src/src/token
