@@ -33,7 +33,7 @@ Your token file doesn't exist.
 #### MNIST
 
 [Digit Recognizer | Kaggle](https://www.kaggle.com/c/digit-recognizer) のデータセットを使っています。  
-これはMNISTのデータを扱いやすくcsvに変換する処理を施したものです。
+これはMNISTのデータが扱いやすいcsv形式に変換されたものです。
 
 - `train.csv`: そのままのデータ  
 - `train_400.csv`: 28x28(pixels)から20x20(pixels)に変換した後のデータ
