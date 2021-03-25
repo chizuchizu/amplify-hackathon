@@ -9,3 +9,12 @@ services:
     volumes:
       - .:/src
       - ~/.amplify:/src/src/token
+  run-mnist:
+    command:
+      - "python"
+      - "-u"
+      - "mnist.py"
+    build: .
+    volumes:
+      - .:/src
+      - ~/.amplify:/src/src/token
