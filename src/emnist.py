@@ -9,7 +9,7 @@ from utils import *
 conf = """
 base:
   api_key_path: "token/token.json"
-  train_path: "../data/train_400.csv"
+  train_path: "../data/emnist_train_400.csv"
   seed: 67
   
 dataset:
@@ -65,7 +65,7 @@ def get_ds(n, seed):
 
 
 dataset = pd.read_csv(cfg.base.train_path)  # .sample(100).values
-for i in range(10):
+for i in range(6, 20):
     init_client(cfg)
     cfg.dataset.target = i
     train = get_ds(
@@ -80,7 +80,6 @@ for i in range(10):
         cfg.base.seed + 1
     )
 
-    # 特徴量、ラベル
     train_ds = MyDataset(train[:, 1:], train[:, 0])
     valid_ds = MyDataset(val[:, 1:], val[:, 0])
     train_dl = DataLoader(
@@ -119,5 +118,5 @@ for i in range(10):
     plt.axis('off')
     plt.subplots_adjust(left=0, right=1, bottom=0, top=1)
     plt.savefig(
-        f"../img/MNIST_{cfg.dataset.target}_weight.png"
+        f"../img/EMNIST_{cfg.dataset.target}_weight.png"
     )

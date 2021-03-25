@@ -65,7 +65,7 @@ def get_ds(n, seed):
 
 
 dataset = pd.read_csv(cfg.base.train_path)  # .sample(100).values
-for i in range(5, 10):
+for i in range(10):
     init_client(cfg)
     cfg.dataset.target = i
     train = get_ds(
