@@ -83,6 +83,9 @@ run-mnist_1  | ===========================================
 
 `train_400.csv`の作成は`src/resize.py`を用いました。
 
+#### Fashion MNIST
+[Fashion MNIST | Kaggle](https://www.kaggle.com/zalando-research/fashionmnist)　のデータセットを使っています。
+
 ## エラーについて
 
 たまに学習時、以下のようなエラーが発生します。~~原因はよくわかってないので、実行し直す、分割して実行するなどして対処してください。~~ 
