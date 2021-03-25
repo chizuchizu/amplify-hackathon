@@ -27,3 +27,12 @@ services:
     volumes:
       - .:/src
       - ~/.amplify:/src/src/token
+  run-fashion-mnist:
+    command:
+      - "python"
+      - "-u"
+      - "fashion-mnist.py"
+    build: .
+    volumes:
+      - .:/src
+      - ~/.amplify:/src/src/token
