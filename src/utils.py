@@ -10,12 +10,16 @@ import time
 
 client = FixstarsClient()
 
+cfg = None
 
-def init_client(cfg):
+
+def init_client(_cfg):
+    global cfg
+    cfg = _cfg.copy()
     # APIキーの取得
-    with open(cfg.base.api_key_path) as f:
+    with open(_cfg.base.api_key_path) as f:
         client.token = json.load(f)["AMPLIFY_TOKEN"]
-    client.parameters.timeout = cfg.model.timeout
+    client.parameters.timeout = _cfg.model.timeout
 
 
 def get_weight(w, k):
@@ -101,7 +105,7 @@ def model(cfg, data, label):
     return q_result
 
 
-def train_fn(cfg, ds):
+def train_fn(ds):
     data = ds[0]
     label = ds[1]
 
