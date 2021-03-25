@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.metrics import roc_auc_score, accuracy_score
 from omegaconf import OmegaConf
 from torch.utils.data import Dataset, DataLoader
@@ -9,7 +10,6 @@ conf = """
 base:
   api_key_path: "token/token.json"
   train_path: "../data/train_400.csv"
-
   seed: 67
   
 dataset:
@@ -27,7 +27,6 @@ model:
   each_weight: 1  # 重み係数
   length_weight: 3  # 重みの層の数
   multiprocessing: true
-  
 """
 
 cfg = OmegaConf.create(conf)
@@ -66,7 +65,8 @@ def get_ds(n, seed):
 
 
 dataset = pd.read_csv(cfg.base.train_path)  # .sample(100).values
-for i in range(10):
+for i in range(6, 10):
+    init_client(cfg)
     cfg.dataset.target = i
     train = get_ds(
         int(
@@ -107,3 +107,16 @@ for i in range(10):
     print("ACC:", accuracy_score(label, np.round(pred)))
     print("=" * 43)
     weight = weight.sum(axis=1) * cfg.model.each_weight
+
+    plt.imshow(
+        weight.reshape(
+            cfg.dataset.img_size,
+            cfg.dataset.img_size
+        )
+    )
+    plt.axis('tight')
+    plt.axis('off')
+    plt.subplots_adjust(left=0, right=1, bottom=0, top=1)
+    plt.savefig(
+        f"../img/MNIST_{cfg.dataset.target}_weight.png"
+    )
