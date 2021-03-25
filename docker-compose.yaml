@@ -18,3 +18,12 @@ services:
     volumes:
       - .:/src
       - ~/.amplify:/src/src/token
+  run-iris:
+    command:
+      - "python"
+      - "-u"
+      - "iris.py"
+    build: .
+    volumes:
+      - .:/src
+      - ~/.amplify:/src/src/token
