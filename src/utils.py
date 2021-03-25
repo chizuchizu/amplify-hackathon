@@ -32,6 +32,10 @@ def minmax(x):
     return (x - min(x)) / (max(x) - min(x))
 
 
+def standardization(x):
+    return (x - x.mean()) / x.std()
+
+
 def is_int(x):
     """
     学習されないBitが存在してInt変換時にエラーが出ることがあるので作った
