@@ -16,7 +16,7 @@
 
 ### 動作確認
 
-全てDocker上で動かしています。 ターミナルで以下のコードを打ってトークンが存在するか確認してください。
+全てDocker上で動かせます。 ターミナルで以下のコードを打ってトークンが存在するか確認してください。
 
 ```bash
 docker-compose up check
@@ -31,11 +31,14 @@ Your token file doesn't exist.
 ```
 
 ### MNIST
+
 ```bash
 docker-compose up run-mnist
 ```
+
 MNISTの学習をします。  \
 実行すると下のように進捗と結果を出力します。
+
 ```bash
 run-mnist_1  | energy:  803.6696062499832
 run-mnist_1  | time: 10.15 s
@@ -82,14 +85,16 @@ run-mnist_1  | ===========================================
 
 ## エラーについて
 
-並列処理で動かしているせいか、たまに学習時に以下のようなエラーが発生します。
+たまに学習時に以下のようなエラーが発生します。原因はよくわかってないので、実行し直す、分割して実行するなどして対処してください。
 
 ```bash
 RuntimeError: Incorrect Content-Type: must be textual to extract_string, JSON to extract_json.
 ```
+
 ```bash
 RuntimeError: 502 Bad Gateway
 ```
+
 ```bash
 RuntimeError: Failed to read HTTP status line
 ```
