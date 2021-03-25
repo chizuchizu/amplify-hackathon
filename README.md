@@ -85,6 +85,8 @@ run-mnist_1  | ===========================================
 
 #### Fashion MNIST
 [Fashion MNIST | Kaggle](https://www.kaggle.com/zalando-research/fashionmnist)　のデータセットを使っています。
+`data/fashion_train_400.csv`ですが、作成方法は上と同じです。
+元データは100MBを超えるのでGitHubにアップロードできませんでした。
 
 ## エラーについて
 
