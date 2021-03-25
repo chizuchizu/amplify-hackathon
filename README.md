@@ -71,6 +71,22 @@ run-mnist_1  | ===========================================
 ...
 ```
 
+### Fashion MNIST
+```bash
+docker-compose up run-fashion-mnist
+```
+
+### EMNIST
+```bash
+docker-compose up run-emnist
+```
+
+### otto
+下に書いた方法でデータをダウンロードしてから
+```bash
+docker-compose up run-otto
+```
+
 ## データセットについて
 
 #### MNIST
@@ -87,6 +103,23 @@ run-mnist_1  | ===========================================
 [Fashion MNIST | Kaggle](https://www.kaggle.com/zalando-research/fashionmnist)　のデータセットを使っています。
 `data/fashion_train_400.csv`ですが、作成方法は上と同じです。
 元データは100MBを超えるのでGitHubにアップロードできませんでした。
+
+#### EMNIST
+[EMNIST (Extended MNIST)](https://www.kaggle.com/crawford/emnist) のデータセットを使っています。
+
+`data/emnist_train_400.csv`は上のデータセットの`emnist-letters-test.csv`をMNISTと同様に処理したものです。
+
+> Cohen, G., Afshar, S., Tapson, J., & van Schaik, A. (2017). EMNIST: an extension of MNIST to handwritten letters. Retrieved from http://arxiv.org/abs/1702.05373
+
+#### otto
+[Otto Group Product Classification Challenge](https://www.kaggle.com/c/otto-group-product-classification-challenge) というKaggleのコンペのデータです。  
+入力は93個の特徴量、出力は9クラスの多クラス分類のタスクです。
+
+[このリンクの先で](https://www.kaggle.com/c/otto-group-product-classification-challenge/data) Kaggleにログインし、`Join Competition`
+を押してから下の画面のtrain.csvをダウンロードしてください。
+![](img/1-join.png)
+
+ダウンロードしたファイルを解凍したら、`train.csv`をこのディレクトリの`data/otto-train.csv` に移動することでデータが利用できます。
 
 ## エラーについて
 

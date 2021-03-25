@@ -36,3 +36,21 @@ services:
     volumes:
       - .:/src
       - ~/.amplify:/src/src/token
+  run-emnist:
+    command:
+      - "python"
+      - "-u"
+      - "emnist.py"
+    build: .
+    volumes:
+      - .:/src
+      - ~/.amplify:/src/src/token
+  run-otto:
+    command:
+      - "python"
+      - "-u"
+      - "otto.py"
+    build: .
+    volumes:
+      - .:/src
+      - ~/.amplify:/src/src/token
