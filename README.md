@@ -30,6 +30,13 @@ Your token file exists.
 Your token file doesn't exist.
 ```
 
+### Build
+Dockerのビルドです。
+```bash
+docker-compose build
+```
+
+
 ### MNIST
 
 ```bash
