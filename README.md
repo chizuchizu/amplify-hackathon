@@ -145,3 +145,12 @@ RuntimeError: 502 Bad Gateway
 ```bash
 RuntimeError: Failed to read HTTP status line
 ```
+
+
+## 提出前チェック
+
+
+- [x] README.mdの手順通りにして、プログラムが実行できる
+- [x] 説明用スライドを用意した 
+- [x] アクセストークンはリポジトリに含まれていない
+- [x] MIT Licenseにした
